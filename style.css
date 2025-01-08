@@ -34,7 +34,7 @@ body {margin: 0;}
       }
 
 
-      #overlay {
+      /* #overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -48,9 +48,9 @@ body {margin: 0;}
         font-size: 30px;
         font-family: 'Rubik', sans-serif; 
         z-index: 1000;
-        opacity: 1; /* Initially fully visible */
-        transition: opacity 1s ease; /* Smooth fade-out transition */
-    }
+        opacity: 1; 
+        transition: opacity 1s ease;
+    } */
 
     /* Hidden audio element */
     audio {
@@ -138,8 +138,155 @@ body {margin: 0;}
 /* Hover effect for the SVG */
 .social-icons a svg.roblox-icon:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
-  fill: #00d1ff; /* Change color on hover to match other icons */
+  fill: #ffffff; /* Change color on hover to match other icons */
 }
 
+/* Initially hide the volume control */
+.audio-control {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Ensure it's above the overlay */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and slider */
+  opacity: 0; /* Hidden initially */
+  transition: opacity 1s ease; /* Fade-in effect */
+}
+
+
+
+/* Black background for audio restriction */
+.audio-control-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;  /* Background color for the restriction */
+  z-index: 999;  /* Make sure this is below the audio control */
+}
+
+/* Speaker icon */
+.audio-control i {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: none;  /* Disable interaction (click) with the icon */
+}
+
+/* Volume Slider */
+#volume-slider {
+  -webkit-appearance: none;  /* Remove default styling */
+  appearance: none;
+  width: 80px;               /* Compact width */
+  height: 5px;               /* Thin track */
+  background: #ffffff;       /* White background for the track */
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  z-index: 1001;  /* Ensure slider stays above the black background */
+}
+
+/* Style for the thumb of the slider */
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;               /* Smaller thumb */
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;        /* Circular thumb */
+  cursor: pointer;
+}
+
+/* For Firefox */
+#volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Hover effect when hovering over the slider */
+#volume-slider:hover {
+  background: #e0e0e0;  /* Slightly darker background on hover */
+}
+
+
+/* #overlay (the black background) */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif; 
+  z-index: 10000; /* High z-index to ensure it stays above everything else */
+  opacity: 1; /* Initially fully visible */
+  transition: opacity 1s ease; /* Smooth fade-out transition */
+}
+
+/* Initially hide the audio control */
+.audio-control {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10001; /* Ensure this is above the overlay (#overlay) */
+  display: none; /* Initially hidden */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the icon and the slider */
+}
+
+/* Speaker icon */
+.audio-control i {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Volume Slider */
+#volume-slider {
+  -webkit-appearance: none;  /* Remove default styling */
+  appearance: none;
+  width: 80px;               /* Compact width */
+  height: 5px;               /* Thin track */
+  background: #ffffff;       /* White background for the track */
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Style for the thumb of the slider */
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;               /* Smaller thumb */
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;        /* Circular thumb */
+  cursor: pointer;
+}
+
+/* For Firefox */
+#volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Hover effect when hovering over the slider */
+#volume-slider:hover {
+  background: #e0e0e0;  /* Slightly darker background on hover */
+}
 
 

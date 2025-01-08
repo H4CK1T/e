@@ -48,4 +48,46 @@ function sleep(ms) {
   typewriteTitle(); // Start the function   
 
 
+// Get the audio element, volume slider, and speaker icon
+const audio = document.getElementById('myAudio');
+const volumeSlider = document.getElementById('volume-slider');
+const speakerIcon = document.getElementById('speaker-icon');
+
+// Set initial volume (optional)
+audio.volume = volumeSlider.value;
+
+// Add event listener to the volume slider
+volumeSlider.addEventListener('input', function () {
+    audio.volume = volumeSlider.value; // Update audio volume based on slider value
+
+    // If the volume is very low, switch to muted speaker icon
+    if (audio.volume <= 0.05) {
+        speakerIcon.classList.remove('fa-volume-up');
+        speakerIcon.classList.add('fa-volume-mute');
+    } else {
+        // If the volume is above 0.05, show the normal speaker icon
+        speakerIcon.classList.remove('fa-volume-mute');
+        speakerIcon.classList.add('fa-volume-up');
+    }
+});
+
+// Function to toggle mute and change the icon
+function toggleMute() {
+    if (audio.muted) {
+        // Unmute audio and show normal speaker icon
+        audio.muted = false;
+        speakerIcon.classList.remove('fa-volume-mute');
+        speakerIcon.classList.add('fa-volume-up');
+    } else {
+        // Mute audio and show muted speaker icon
+        audio.muted = true;
+        speakerIcon.classList.remove('fa-volume-up');
+        speakerIcon.classList.add('fa-volume-mute');
+    }
+}
+
+
+
+
+
 
