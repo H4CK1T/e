@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>afdhal201</title>
+</head>
+<body>
+    <div class="lmao">
+        <div class="video-container">
+            <video autoplay muted loop id="myVideo">
+                <source src="assets/video/174f3c10-75b8-4ab9-af88-205ede549337.mp4" type="video/mp4" class="e">
+            </video>
+            <div class="video-text-container">
+                <div class="video-text">
+                    <div class="main-text">afdhal201</div>
+                    <div class="sub-text">| FPS / RPG Player | Amateur Programmer |</div>
+                    <div class="social-icons">
+                        <a href="mailto:kingcoding201@gmail.com" target="_blank" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/h4ck1t" target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.roblox.com/users/7189615378" target="_blank" aria-label="Roblox">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="roblox-icon">
+                                <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+    <!-- <audio id="myAudio" loop>
+        <source src="assets/sound/85d550f1-3cdc-40fa-9ada-eece0f59141d.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        });
+    </script> -->
+    
+    <div id="overlay">
+        <span>Click anywhere</span>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="myAudio" loop muted>
+        <source src="assets/sound/85d550f1-3cdc-40fa-9ada-eece0f59141d.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+       // Wait for user interaction to unmute and play the audio
+       document.body.addEventListener('click', function() {
+            var overlay = document.getElementById('overlay');
+            var audio = document.getElementById('myAudio');
+
+            // Fade out the overlay by changing opacity
+            overlay.style.opacity = '0';
+
+            // Wait for the fade-out to finish, then hide the overlay
+            setTimeout(function() {
+                overlay.style.display = 'none';
+            }, 1000); // 1000ms = 1 second (duration of the fade)
+
+            // Start playing the audio (unmute and autoplay)
+            audio.play();
+            audio.muted = false;
+        });
+    </script>
+<script src="script.js"></script>
+</body>
+</html>
